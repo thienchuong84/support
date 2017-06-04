@@ -32,11 +32,27 @@ class ProjectsController extends Controller
         return view('projects/index', compact('projects'));
 	}
 
-    public function show($id)
+    public function show($id = null)
     {
         $projects = Project::listActive()->get();
 
-        $teams = \App\Team::listActive()->where('project_id', '=', $id)->get();
+        if( is_null($id) )
+        {
+            // $id = \App\Project::listActive()->pluck('id')->first(); //dd($id);
+            // if( is_null($id) )
+            //     $teams = null;
+            // else
+            //     $teams = \App\Team::listActive()->where('project_id', '=', $id)->get(); //dd($teams);
+
+            $teams = null;
+        }
+        else 
+        {
+             // $teams = \App\Team::listActive()->where('project_id', '=', $id)->get();
+            $teams = \App\Project::listActive()->find($id)->teams()->listActive()->get();
+        }
+
+       // $teams = $teams->get();
          
         // $teams = Project::find($id)->teams()->listActive()->get();
 

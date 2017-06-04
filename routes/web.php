@@ -23,7 +23,7 @@ Route::get('/users', 'UsersController@listUsers');
 Route::get('/users/{user?}', 'UsersController@show')->where('user', '[0-9]+');
 
 // ProjectsController
-Route::get('/projects', 'ProjectsController@index');
+// Route::get('/projects', 'ProjectsController@index');
 
 Route::get('/projects/new', 'ProjectsController@create');
 
@@ -31,7 +31,8 @@ Route::post('/projects', 'ProjectsController@store');
 
 // Route::get('/projects/show/{project}', 'ProjectsController@show');   // route model binding
 
-Route::get('/projects/{project_id}/show', 'ProjectsController@show')->where('project_id', '[0-9]+');
+// Route::get('/projects/{id?}/show', 'ProjectsController@show')->where('id', '[0-9]+');
+Route::get('/projects/{id?}', 'ProjectsController@show')->where('id', '[0-9]+');
 
 Route::get('/projects/edit/{id}', 'ProjectsController@edit');
 

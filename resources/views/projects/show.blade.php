@@ -11,7 +11,7 @@
 			
 		</div></p>
 	</div>
-	
+
 	<div class="row">
 		@if( count($projects) > 0 )
 		<div class="col-sm-6">
@@ -27,7 +27,7 @@
  				<tbody>
  					@foreach( $projects as $project)
 					<tr>
-						<td><a href="/projects/{{ $project->id }}/show">{{ $project->name }}</a></td>
+						<td><a href="/projects/{{ $project->id }}">{{ $project->name }}</a></td>
 						<td>{{ $project->created_at->toFormattedDateString() }}</td>
 						<td><a href="#" class="btn btn-primary" role="button">Edit</a></td>
 					</tr>

@@ -9,6 +9,14 @@
       </div>
     </div> -->
 
+	<div class="row">
+		<div class="col-sm-6">
+			<blockquote class="blockquote">
+				<h3 class="mb-0">New Team</h3>
+			</blockquote>
+		</div>
+	</div>
+
     <div class="row">
     	<div class="col-sm-6">
     		
